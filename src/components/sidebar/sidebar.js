@@ -8,7 +8,7 @@ const SimpleCarousel = () => {
     const settings = {
       dots: true,
       infinite: false,
-      speed: 500,
+      speed: 300,
       slidesToShow: 1,
       slidesToScroll: 1
     };
@@ -28,7 +28,7 @@ const SimpleCarousel = () => {
       color: white; // Цвет активной точки
     }
     .slider-image {
-      width: 100%;       // Ширина контейнера изображения
+      width: 90%;       // Ширина контейнера изображения
       height: 500px;     // Высота контейнера изображения
       display: block;    // Убирает лишние отступы
       object-fit: cover; // Обрезает изображение, сохраняя пропорции
