@@ -2,8 +2,8 @@ import * as React from 'react';
 import { AppBar, Box, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
-import Image from '../Image/Image';
-import logo from '../Image/logo.png'
+import ImageLogo from '../ImageLogo/ImageLogo';
+import logo from '../ImageLogo/logo.png'
 const StyledDrawer = styled(Drawer)(({ theme, bgColor }) => ({
   '& .MuiDrawer-paper': {
     backgroundColor: bgColor,
@@ -47,7 +47,7 @@ export default function ButtonAppBar() {
           <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }} onClick={toggleDrawer(true)}>
             <MenuIcon />
           </IconButton>
-          <Image className="smallLogo"  image={logo} />
+          <ImageLogo  image={logo} />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontSize: 35 }}>
             TgSoft
           </Typography>
