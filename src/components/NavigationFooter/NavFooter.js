@@ -16,7 +16,7 @@ const StyledDrawer = styled(Drawer)(({ theme, bgColor }) => ({
 
 export default function ButtonAppBar() {
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
-  const [drawerBgColor, setDrawerBgColor] = React.useState('#2A2B30'); // используем темно-серый цвет для Drawer
+  const [drawerBgColor] = React.useState('#2A2B30'); // используем темно-серый цвет для Drawer
 
   const toggleDrawer = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
