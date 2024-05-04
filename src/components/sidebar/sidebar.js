@@ -22,23 +22,23 @@ const SimpleCarousel = () => {
       color: white; // Цвет точек
     }
     .slick-dots li {
-      margin: 0 5px; // Расстояние между точками
+      padding: 5px; // Расстояние между точками
     }
     .slick-dots li.slick-active button:before {
       color: white; // Цвет активной точки
     }
     .slider-image {
-      width: 1000%;       // Ширина контейнера изображения
+      width: 100%;       // Ширина контейнера изображения
       height: 500px;     // Высота контейнера изображения
-      display: block;    // Убирает лишние отступы
-      object-fit: cover; // Обрезает изображение, сохраняя пропорции
+    
+     
     }
   `}
     </style>
   
         <Slider {...settings}>
         <div>
-            <img  src={logo2} height={212} alt='slide-1' className='slider-image' />
+            <img  src={logo2}  height={212} alt='slide-1' className='slider-image' />
         </div>
         <div>
             <img src={logo} height={212}  alt='slide-2' className='slider-image' />

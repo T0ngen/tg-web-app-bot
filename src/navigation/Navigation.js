@@ -31,7 +31,7 @@ export default function SimpleBottomNavigation() {
         showLabels
         value={value}
         onChange={handleChange}
-        sx={{ width: '100%' }} // Дополнительно растягиваем навигацию
+         // Дополнительно растягиваем навигацию
       >
         <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
         <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
