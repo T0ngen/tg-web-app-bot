@@ -27,7 +27,7 @@ class App  extends React.Component{
        <ImageAvatars />
        <Typography variant="h6" component="div" className='helloText' sx={{margin:  2,fontSize:15, paddingTop:3}}  >{text} </Typography>
        <Typography variant="h6" component="div" className='helloText' sx={{margin:  2,fontSize:15, paddingTop:1}}  >{text2} </Typography>
-       <SimpleCarousel />
+       <SimpleCarousel/>
       <div className='App'> 
         
         <Routes>
