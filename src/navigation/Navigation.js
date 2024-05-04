@@ -20,11 +20,12 @@ export default function SimpleBottomNavigation() {
 
   return (
     <Box sx={{
-      position: 'fixed',   // Зафиксируем позицию
+      position: 'fixed',
+      marginBottom: 10,   // Зафиксируем позицию
       bottom: 0,           // Поместим футер в нижней части экрана
       left: 0,
       right: 0,           // Растягиваем на всю ширину
-      width: '100%'        // Задаем ширину на весь экран
+      width: '100%'       // Задаем ширину на весь экран
     }}>
       <BottomNavigation
         showLabels
