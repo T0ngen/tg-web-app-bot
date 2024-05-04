@@ -12,6 +12,7 @@ body {
 }
 
 .buttonSupport{
+  
   background-color: blue;
 }
 
@@ -19,7 +20,7 @@ body {
 .smallLogo {
   margin: 5px;
   margin-left: 2px;
-  margin-right: 2px;
+  margin-right: 5px;
   width: 60px;
   height: auto;
 }

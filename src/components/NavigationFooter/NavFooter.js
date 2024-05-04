@@ -48,10 +48,10 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           <ImageLogo  image={logo} />
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontSize: 35 }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontSize: 25 }}>
             TgSoft
           </Typography>
-          <Button  color="inherit" sx={{backgroundColor: 'blue', borderRadius:15}}>Связаться</Button>
+          <Button  color="inherit" sx={{backgroundColor: 'blue', borderRadius:15, fontSize: 12}}>Связаться</Button>
         </Toolbar>
       </AppBar>
       <StyledDrawer anchor='left' open={isDrawerOpen} onClose={toggleDrawer(false)} ModalProps={{ keepMounted: true }} bgColor={drawerBgColor}>
