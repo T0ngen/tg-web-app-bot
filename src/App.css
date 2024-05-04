@@ -12,7 +12,8 @@ body {
 }
 
 .buttonSupport{
-  
+  font-family: Georgia, "Times New Roman";
+  font-weight: bold;
   background-color: blue;
 }
 
@@ -20,7 +21,12 @@ body {
 .smallLogo {
   margin: 5px;
   margin-left: 2px;
-  margin-right: 5px;
-  width: 60px;
+  margin-right: 10px;
+  width: 50px;
   height: auto;
+}
+
+.helloText{
+  color: white;
+  
 }

@@ -31,7 +31,7 @@ export default function ButtonAppBar() {
         <MenuIcon />
       </IconButton>
       <List sx={{ mt: 5 }}>
-        {['Option 1', 'Option 2', 'Option 3'].map((text, index) => (
+        {['Актуальное', 'Статьи', 'Чем я могу быть полезен?', 'Мои проекты'].map((text, index) => (
           <ListItem button key={text} onClick={toggleDrawer(false)}>
             <ListItemText sx={{ color: 'white', marginTop : 3, marginLeft:8 }}  primary={text}  />
           </ListItem>
@@ -48,7 +48,7 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           <ImageLogo  image={logo} />
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontSize: 25 }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontSize: 25, fontWeight: 'bold' }}>
             TgSoft
           </Typography>
           <Button  color="inherit" sx={{backgroundColor: 'blue', borderRadius:15, fontSize: 12}}>Связаться</Button>
