@@ -6,7 +6,7 @@ import ButtonAppBar from './components/NavigationFooter/NavFooter';
 import Typography from '@mui/material/Typography';
 import Recents from './recents/Recents';
 import ImageAvatars from './components/Histories/Histories';
-import SimpleCarousel from './components/sidebar/sidebar';
+// import SimpleCarousel from './components/sidebar/sidebar';
 
 
 const text = `Привет! На связи TgSoft, лучший IT канал 👋🏼 Не пугайся, ты не на сайте и не в другой соцсeти
