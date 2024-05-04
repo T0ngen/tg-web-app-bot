@@ -6,7 +6,7 @@ import ButtonAppBar from './components/NavigationFooter/NavFooter';
 import Typography from '@mui/material/Typography';
 import Recents from './recents/Recents';
 import ImageAvatars from './components/Histories/Histories';
-// import SimpleCarousel from './components/sidebar/sidebar';
+import SimpleCarousel from './components/sidebar/sidebar';
 
 
 const text = `Привет! На связи TgSoft, лучший IT канал 👋🏼 Не пугайся, ты не на сайте и не в другой соцсeти
@@ -27,13 +27,13 @@ class App  extends React.Component{
        <ImageAvatars />
        <Typography variant="h6" component="div" className='helloText' sx={{padding:  2,fontSize:15, paddingTop:3, width: '100%'}}  >{text} </Typography>
        <Typography  variant="h6" component="div" className='helloText' sx={{padding:  2,fontSize:15, paddingTop:1, width: '100%'}}  >{text2} </Typography>
-       {/* <SimpleCarousel sx={{ width: '100%'}}/> */}
+       <SimpleCarousel />
       <div className='App'> 
         
         <Routes>
           <Route path="/recents" element={<Recents />} />
           <Route path="/favorites" element={<div>Favorites</div>} />
-          <Route path="/nearby" element={<div>Nearby</div>} />
+          <Route path="/nearby" element={<div></div>} />
          
         </Routes>
         {/* <SimpleBottomNavigation /> */}
