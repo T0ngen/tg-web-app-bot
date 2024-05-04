@@ -1,15 +1,27 @@
 import * as React from 'react';
 import { AppBar, Box, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
-// import CloseIcon from '@mui/icons-material/Close';
+
+const StyledDrawer = styled(Drawer)(({ theme, bgColor }) => ({
+  '& .MuiDrawer-paper': {
+    transition: 'transform 1s ease-in-out, background-color 1s ease-in-out',
+    backgroundColor: bgColor, // Используем переменную для динамического изменения цвета
+    willChange: 'transform, background-color',
+    width: '100vw',
+    height: '100vh'
+  }
+}));
 
 export default function ButtonAppBar() {
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
+  const [drawerBgColor, setDrawerBgColor] = React.useState('lightgray'); // начальный цвет - светло-серый
 
   const toggleDrawer = (open) => (event) => {
-    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
+    setDrawerBgColor(open ? 'darkgray' : 'lightgray'); // изменяем цвет фона при открытии и закрытии
     setDrawerOpen(open);
   };
 
@@ -21,11 +33,11 @@ export default function ButtonAppBar() {
     >
       <IconButton
         onClick={toggleDrawer(false)}
-        sx={{ position: 'absolute', top: 8, left: 8 }} // changed position to top left corner
+        sx={{ position: 'absolute', top: 8, left: 8 }}
       >
         <MenuIcon />
       </IconButton>
-      <List sx={{ mt: 5 }}> 
+      <List sx={{ mt: 5 }}>
         {['Option 1', 'Option 2', 'Option 3'].map((text, index) => (
           <ListItem button key={text} onClick={toggleDrawer(false)}>
             <ListItemText primary={text} />
@@ -55,21 +67,15 @@ export default function ButtonAppBar() {
           <Button color="inherit">Связаться</Button>
         </Toolbar>
       </AppBar>
-      <Drawer
+      <StyledDrawer
         anchor='left'
         open={isDrawerOpen}
         onClose={toggleDrawer(false)}
-        ModalProps={{ keepMounted: true }}  // Better open performance on mobile.
-        sx={{
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
-            width: '100vw', // Set the width to 100% of the viewport width
-            height: '100vh' // Set the height to 100% of the viewport height
-          }
-        }}
+        ModalProps={{ keepMounted: true }}
+        bgColor={drawerBgColor} // Передаем динамический цвет
       >
         {drawerContent}
-      </Drawer>
+      </StyledDrawer>
     </Box>
   );
 }
