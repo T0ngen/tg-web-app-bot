@@ -2,45 +2,38 @@ import * as React from 'react';
 import { AppBar, Box, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
-
+import Image from '../Image/Image';
+import logo from '../Image/logo.png'
 const StyledDrawer = styled(Drawer)(({ theme, bgColor }) => ({
   '& .MuiDrawer-paper': {
-    transition: 'transform 1s ease-in-out, background-color 1s ease-in-out',
-    backgroundColor: bgColor, // Используем переменную для динамического изменения цвета
-    willChange: 'transform, background-color',
+    backgroundColor: bgColor,
     width: '100vw',
-    height: '100vh'
+    height: '100vh',
+    transition: 'transform 1s ease-in-out, background-color 1s ease-in-out',
+    willChange: 'transform, background-color',
   }
 }));
 
 export default function ButtonAppBar() {
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
-  const [drawerBgColor, setDrawerBgColor] = React.useState('lightgray'); // начальный цвет - светло-серый
+  const [drawerBgColor, setDrawerBgColor] = React.useState('#2A2B30'); // используем темно-серый цвет для Drawer
 
   const toggleDrawer = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
-    setDrawerBgColor(open ? 'darkgray' : 'lightgray'); // изменяем цвет фона при открытии и закрытии
     setDrawerOpen(open);
   };
 
   const drawerContent = (
-    <Box
-      sx={{ width: 'auto', height: '100%' }}
-      role="presentation"
-      onKeyDown={toggleDrawer(false)}
-    >
-      <IconButton
-        onClick={toggleDrawer(false)}
-        sx={{ position: 'absolute', top: 8, left: 8 }}
-      >
+    <Box sx={{ width: 'auto', height: '100%' }} role="presentation" onKeyDown={toggleDrawer(false)}>
+      <IconButton onClick={toggleDrawer(false)} sx={{ position: 'absolute', top: 15, left: 20, color: 'white' }}>
         <MenuIcon />
       </IconButton>
       <List sx={{ mt: 5 }}>
         {['Option 1', 'Option 2', 'Option 3'].map((text, index) => (
           <ListItem button key={text} onClick={toggleDrawer(false)}>
-            <ListItemText primary={text} />
+            <ListItemText sx={{ color: 'white', marginTop : 3, marginLeft:8 }}  primary={text}  />
           </ListItem>
         ))}
       </List>
@@ -49,31 +42,19 @@ export default function ButtonAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ bgcolor: '#2A2B30' }}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-            onClick={toggleDrawer(true)}
-          >
+          <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }} onClick={toggleDrawer(true)}>
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Image className="smallLogo"  image={logo} />
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontSize: 35 }}>
             TgSoft
           </Typography>
-          <Button color="inherit">Связаться</Button>
+          <Button  color="inherit" sx={{backgroundColor: 'blue', borderRadius:15}}>Связаться</Button>
         </Toolbar>
       </AppBar>
-      <StyledDrawer
-        anchor='left'
-        open={isDrawerOpen}
-        onClose={toggleDrawer(false)}
-        ModalProps={{ keepMounted: true }}
-        bgColor={drawerBgColor} // Передаем динамический цвет
-      >
+      <StyledDrawer anchor='left' open={isDrawerOpen} onClose={toggleDrawer(false)} ModalProps={{ keepMounted: true }} bgColor={drawerBgColor}>
         {drawerContent}
       </StyledDrawer>
     </Box>

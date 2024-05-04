@@ -2,10 +2,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body {
   background: var(--tg-theme-bg-color);
   color: var(--tg-theme-text-color);
+  background-color: #2A2B30;
 }
 
+.buttonSupport{
+  background-color: blue;
+}
+
+
+.smallLogo {
+  margin: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 70px;
+  height: auto;
+}
