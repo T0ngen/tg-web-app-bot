@@ -67,7 +67,7 @@ const SimpleCarousel = () => {
     const settings = {
         dots: true,
         infinite: true,
-        speed: 300,
+        speed: 800,
         slidesToShow: 1,
         slidesToScroll: 1
     };
@@ -77,11 +77,12 @@ const SimpleCarousel = () => {
             <style>
                 {`
                 body, html {
-                    margin: 0;
-                    padding: 0;
-                    overflow-x: hidden; // Предотвращение горизонтального скролла
+                   
+                    overflow-x: hidden;
+                     // Предотвращение горизонтального скролла
                 }
                 .slick-slider {
+                    padding-top: 20px;
                     position: relative;
                 }
                 .slick-dots li button:before {
@@ -95,6 +96,7 @@ const SimpleCarousel = () => {
                     color: white; // Цвет активной точки
                 }
                 .slider-image {
+                    padding: 20px;
                     width: 100%;    // Ширина изображения
                     height: auto;   // Высота изображения, автоматически определяется
                 }
@@ -103,13 +105,13 @@ const SimpleCarousel = () => {
 
             <Slider {...settings}>
                 <div>
-                    <img src={logo2} alt='slide-1' className='slider-image' />
+                    <img src={logo2} height={212}   alt='slide-1' className='slider-image' />
                 </div>
                 <div>
-                    <img src={logo} alt='slide-2' className='slider-image' />
+                    <img src={logo} height={212} alt='slide-2' className='slider-image' />
                 </div>
                 <div>
-                    <img src={logo3} alt='slide-3' className='slider-image' />
+                    <img src={logo3} height={212} alt='slide-3' className='slider-image' />
                 </div>
             </Slider>
         </>
