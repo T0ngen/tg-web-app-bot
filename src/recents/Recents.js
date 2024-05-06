@@ -27,7 +27,7 @@ class Recents  extends React.Component{
         stories={stories}
         defaultInterval={2000}
         width={'100%'}
-        height={768}
+        height={'100%'}
       />
     );
   
