@@ -30,7 +30,7 @@ export default function Recents() {
 	  <Stories
 		stories={stories}
 		defaultInterval={4000}
-		width={'100%'}
+		width={'auto'}
 		height={'auto'}
 		onAllStoriesEnd={handleStoriesEnd}
 	  />
