@@ -27,13 +27,15 @@ export default function Recents() {
 
   return (
 	<div className={isClosing ? 'closing-animation' : ''}>
-	  <Stories
-		stories={stories}
-		defaultInterval={4000}
-		width={'auto'}
-		height={'100%'}
-		onAllStoriesEnd={handleStoriesEnd}
-	  />
-	</div>
+  		<div className="stories-container"> {/* Добавляем класс для уменьшения размера */}
+    <Stories
+      stories={stories}
+      defaultInterval={4000}
+      width={'auto'}
+      height={'var(--tg-viewport-height)'}
+      onAllStoriesEnd={handleStoriesEnd}
+    />
+  </div>
+</div>
   );
 }
