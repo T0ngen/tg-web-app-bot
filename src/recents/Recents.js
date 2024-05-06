@@ -9,7 +9,7 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 export default function Recents() {
 const navigate = useNavigate();
-
+const [isClosing, setClosing] = useState(false);
  const handleStoriesEnd = () => {
 	setClosing(true);
 	setTimeout(() => {
@@ -23,13 +23,21 @@ const stories = [
 		content: ({ action, isPaused }) => {
 			return (
 				<div style={contentStyle}>
-				<ArrowBackIosNewIcon
-				style={arrow
-                }
+					<ArrowBackIosNewIcon
+					style={arrow}
+					
+					onClick={() => {
+						console.log('clicked');
+						handleStoriesEnd();
+					}}
+				/>
+					{/* <ArrowBackIosNewIcon
+					style={arrow}
+					onClick={() => {
+						handleStoriesEnd();
+					}}
+				/> */}
 
-				  onClick={() => {
-					handleStoriesEnd()
-					}} />
 				<img alt=""  style={image} 
 				src="https://i.ibb.co/3crZkK3/2.jpg">
 				</img>
@@ -47,13 +55,14 @@ const stories = [
 			return (
 				<div style={contentStyle}>
 				<ArrowBackIosNewIcon
-				style={
-					arrow
-                }
+					style={arrow}
+					
+					onClick={() => {
+						console.log('clicked');
+						handleStoriesEnd();
+					}}
+				/>
 
-				  onClick={() => {
-					handleStoriesEnd()
-					}} />
 				<img alt="" style={image} 
 				src="https://i.ibb.co/kcfLkH5/1.jpg">
 				</img>
@@ -67,9 +76,10 @@ const stories = [
 	},
 	
 	
+	
 	];
 	   
- const [isClosing, setClosing] = useState(false);
+
 
 
  
@@ -77,20 +87,20 @@ const stories = [
 
   return (
 	<div className={isClosing ? 'closing-animation' : ''}>
-	  <div className="stories-container">
+	 
 	  
 		<Stories
-		  loop
+		  
 		  stories={stories}
 		  defaultInterval={4000}
-		  width={'auto'}
+		  width={'100%'}
 		  height={'var(--tg-viewport-height)'}
 		  onAllStoriesEnd={handleStoriesEnd}
 		 
 		>
 		
 		</Stories>
-	  </div>
+	 
 	</div>
   );
 }
@@ -99,12 +109,15 @@ const stories = [
 		position: 'absolute',
 		top: 20,
 		left: 20,
-		fontSize: '2rem',
-		zIndex: 1,
+		zIndex: 3141,
 		color: 'white',
-		
-		
 		cursor: 'pointer',
+		background: 'transparent',
+		border: 'none',
+
+		
+		
+		
 	}
 
   const image = {
