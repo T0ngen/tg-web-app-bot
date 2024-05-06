@@ -31,7 +31,7 @@ export default function Recents() {
 		stories={stories}
 		defaultInterval={4000}
 		width={'auto'}
-		height={'auto'}
+		height={'100%'}
 		onAllStoriesEnd={handleStoriesEnd}
 	  />
 	</div>
