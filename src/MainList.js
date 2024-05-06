@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import { BrowserRouter } from 'react-router-dom';
 import ButtonAppBar from './components/NavigationFooter/NavFooter';
 import Typography from '@mui/material/Typography';
