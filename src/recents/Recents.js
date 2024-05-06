@@ -124,9 +124,9 @@ const stories = [
 	position: 'relative',
 	background: "#333",
 	width: "100%",
-	padding: 20,
+	
 	color: "white",
-	height: "100%",
+	height: 'var(--tg-viewport-height)',
   };
   
 //   const customSeeMore = {
