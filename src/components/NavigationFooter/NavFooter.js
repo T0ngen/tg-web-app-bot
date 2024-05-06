@@ -31,9 +31,9 @@ export default function ButtonAppBar() {
         <MenuIcon />
       </IconButton>
       <List sx={{ mt: 6}}>
-        {['Актуальное', 'Статьи', 'Чем я могу быть полезен?', 'Мои проекты'].map((text, index) => (
+        {['Актуальное', 'Статьи', 'Чем мы можем быть полезны?', 'Мои проекты'].map((text, index) => (
           <ListItem  button key={text} onClick={toggleDrawer(false)}>
-            <ListItemText className='navFooter'  sx={{color: 'white', marginTop : 4, marginLeft:10}}  primary={text}  />
+            <ListItemText className='navFooter'  sx={{color: 'white', marginTop : 4, marginLeft:4}}  primary={text}  />
           </ListItem>
         ))}
       </List>
@@ -51,7 +51,7 @@ export default function ButtonAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontSize: 25, fontWeight: 'bold',  fontFamily: 'Montserrat, sans-serif' }}>
             TgSoft
           </Typography>
-          <Button  color="inherit" sx={{backgroundColor: 'blue', borderRadius:15, fontSize: 12,  fontFamily: 'Montserrat, sans-serif'}}>Связаться</Button>
+          <Button href='https://t.me/TgS0ft'  color="inherit" sx={{backgroundColor: 'blue', borderRadius:15, fontSize: 12,  fontFamily: 'Montserrat, sans-serif'}}>Связаться</Button>
         </Toolbar>
       </AppBar>
       <StyledDrawer anchor='left' open={isDrawerOpen} onClose={toggleDrawer(false)} ModalProps={{ keepMounted: true }} bgColor={drawerBgColor}>
