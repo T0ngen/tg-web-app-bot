@@ -1,45 +1,39 @@
-
 import '../App.css';
 import Stories from 'react-insta-stories';
 import React from 'react';
-// import history1 from './2.jpg'
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import SimpleBottomNavigation from '../navigation/Navigation';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const stories = [
-	'https://i.ibb.co/3crZkK3/2.jpg',
-	'https://i.ibb.co/kcfLkH5/1.jpg'
-	// {
-	// 	content: (props) => (
-	// 		<div style={{ background: 'pink', padding: 20 }}>
-	// 			<h1 style={{ marginTop: '100%', marginBottom: 0 }}>🌝</h1>
-	// 			<h1 style={{ marginTop: 5 }}>A custom title can go here.</h1>
-	// 		</div>
-	// 	),
-	// },
+ {
+  url: 'https://i.ibb.co/3crZkK3/2.jpg',
+ },
+ {
+  url: 'https://i.ibb.co/kcfLkH5/1.jpg',
+ },
 ];
-class Recents  extends React.Component{
 
-  render(){
+export default function Recents() {
+ const [isClosing, setClosing] = useState(false);
 
-    return (
-      <Stories
-        stories={stories}
-        defaultInterval={2000}
-        width={'100%'}
-        height={'100%'}
-      />
-    );
-  
-  
-    
-  }
+ const navigate = useNavigate();
+ 
+ const handleStoriesEnd = () => {
+	setClosing(true);
+	setTimeout(() => {
+	  navigate('/');
+	}, 500); // задержка для завершения анимации
+  };
 
-  
-  
+  return (
+	<div className={isClosing ? 'closing-animation' : ''}>
+	  <Stories
+		stories={stories}
+		defaultInterval={4000}
+		width={'100%'}
+		height={'100%'}
+		onAllStoriesEnd={handleStoriesEnd}
+	  />
+	</div>
+  );
 }
-
-
-export default Recents;
-
-
