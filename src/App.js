@@ -8,15 +8,19 @@ import RecentStoriesPage from './recents/RecentsStoriesPage';
 // import ImageAvatars from './components/Histories/Histories';
 // import SimpleCarousel from './components/sidebar/sidebar';
 import MainList from './MainList';
-
-
 class App extends React.Component {
   componentDidMount() {
-    window.scrollBy(0, window.innerHeight);
-    if(window.Telegram) {
+    if (window.Telegram) {
       const tg = window.Telegram.WebApp;
       tg.expand();
     }
+    
+    window.addEventListener('viewportChanged', () => {
+      if (window.Telegram) {
+        const tg = window.Telegram.WebApp;
+        tg.expand();
+      }
+    });
   }
 
   render() {
@@ -35,4 +39,3 @@ class App extends React.Component {
 }
 
 export default App;
-
