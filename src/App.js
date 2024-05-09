@@ -12,6 +12,7 @@ import MainList from './MainList';
 
 class App extends React.Component {
   componentDidMount() {
+    window.scrollBy(0, window.innerHeight);
     if(window.Telegram) {
       const tg = window.Telegram.WebApp;
       tg.expand();
