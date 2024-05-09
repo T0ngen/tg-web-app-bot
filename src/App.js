@@ -9,23 +9,24 @@ import RecentStoriesPage from './recents/RecentsStoriesPage';
 // import SimpleCarousel from './components/sidebar/sidebar';
 import MainList from './MainList';
 
-// const text = `Привет! На связи TgSoft 👋🏼 Не пугайся, ты не на сайте и не в другой соцсeти.
-// Так выглядит наш блог в Телеграмм - TgSoft.`
-// const text2 = `Жми ниже, мы расскажем и покажем, как здесь все устроено⬇️`
+
 class App extends React.Component {
+  componentDidMount() {
+    if(window.Telegram) {
+      const tg = window.Telegram.WebApp;
+      tg.expand();
+    }
+  }
 
   render() {
     return (
       <Router>
         <div className='App'>
           <Routes>
-          <Route path="/" element={<MainList />} />
-            <Route path="/stories" element={<RecentStoriesPage />}
-             /> {/* <-- Добавили элемент для отображения страницы Recents */}
-            
+            <Route path="/" element={<MainList />} />
+            <Route path="/stories" element={<RecentStoriesPage />} />
             <Route path="/nearby" element={<div></div>} />
           </Routes>
-      
         </div>
       </Router>
     );
@@ -33,3 +34,4 @@ class App extends React.Component {
 }
 
 export default App;
+
