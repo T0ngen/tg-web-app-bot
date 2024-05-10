@@ -16,7 +16,6 @@ class App extends React.Component {
       const tg = window.Telegram.WebApp;
       tg.expand();
       tg.isClosingConfirmationEnabled = true;
-      tg.isExpanded = true;
     }
   }
 
