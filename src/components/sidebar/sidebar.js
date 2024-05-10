@@ -40,7 +40,7 @@ const SimpleCarousel = () => {
                     color: white; // Цвет активной точки
                 }
                 .slider-image {
-                    padding: 10px;
+                    padding: 5px;
                     
                     margin: 0 auto;
                     width: auto;   // Ширина изображения
