@@ -1,0 +1,11 @@
+.Tabs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+   
+}
+
+.TabsText{
+    text-align: center;
+}
