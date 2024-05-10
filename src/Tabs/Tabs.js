@@ -1,7 +1,10 @@
 import ButtonTabs from "../Button/ButtonTab";
 import './Tabs.css';
 import { useState } from "react";
-
+import OutlinedCard from "../outlinedCard/OutlinedCard";
+import AddToHomeScreenIcon from '@mui/icons-material/AddToHomeScreen';
+import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic';
+import QuizIcon from '@mui/icons-material/Quiz';
 export default function Tabs() {
     const [active, setActive] = useState('Первая описание'); // Устанавливаем значение первой кнопки активной
 
@@ -12,12 +15,13 @@ export default function Tabs() {
     return (
         <div>
             <div className="Tabs">
-                <ButtonTabs onClick={() => handleClick('Первая описание')} name={'Первая'} active={active === 'Первая описание'} />
-                <ButtonTabs onClick={() => handleClick('Вторая описание')} name={'Вторая'} active={active === 'Вторая описание'} />
-                <ButtonTabs onClick={() => handleClick('Третья описание')} name={'Третья'} active={active === 'Третья описание'} />
+            
+                <ButtonTabs endIcon={<AddToHomeScreenIcon />} onClick={() => handleClick('Первая описание')} name={'Услуги'} active={active === 'Первая описание'} />
+                <ButtonTabs endIcon={<AutoAwesomeMosaicIcon />} onClick={() => handleClick('Вторая описание')} name={'Каталог'} active={active === 'Вторая описание'} />
+                <ButtonTabs endIcon={<QuizIcon />} onClick={() => handleClick('Третья описание')} name={'--FAQ--'} active={active === 'Третья описание'} />
             </div>
-       
-            <p className="TabsText">{active}</p>
+            <OutlinedCard active={active} />
+           
         </div>
     );
 }

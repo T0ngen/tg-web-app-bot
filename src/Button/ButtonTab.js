@@ -1,25 +1,31 @@
-import { useState, useEffect } from 'react'; // Добавляем useEffect для обновления состояния при изменении prop
+import { useState, useEffect } from 'react';
+import Button from '@mui/material/Button';
 import './ButtonTabs.css';
-export default function ButtonTabs({ name, onClick, active }) {
-    const [isActive, setIsActive] = useState(active); // Инициализируем состояние isActive с prop active
+
+
+
+export default function ButtonTabs({ name, onClick, active,endIcon  }) {
+    
+    const [isActive, setIsActive] = useState(active);
 
     useEffect(() => {
-        setIsActive(active); // Обновляем состояние isActive при изменении prop active
-    }, [active]); // Зависимость useEffect от prop active
+        setIsActive(active);
+    }, [active]);
 
     function handleClick() {
-        setIsActive(true); // Помечаем кнопку как активную
-        onClick(); // Вызываем функцию onClick из родительского компонента
+        setIsActive(true);
+        onClick();
     }
 
     return (
-        <div>
-            <button 
-                onClick={handleClick} 
-                className={isActive ? "ButtonTab active" : "ButtonTab"} // Добавляем класс "active" при активной кнопке
-            >
-                {name}
-            </button>
-        </div>
+        <Button 
+            onClick={handleClick} 
+            className={"ButtonTab"} 
+            variant={isActive ? "contained" : "outlined"}
+            endIcon={endIcon}
+            size="medium"
+        >
+            {name}
+        </Button>
     );
 }
