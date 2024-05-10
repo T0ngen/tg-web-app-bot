@@ -16,25 +16,22 @@ import Typography from '@mui/material/Typography';
 // );
 
 
-export default function OutlinedCard({active, name}) {
+export default function OutlinedCard({active, text}) {
 
 
 const card = (
     <React.Fragment>
       <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+        {/* <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           Word of the Day
-        </Typography>
-        <Typography variant="h5" component="div">
+        </Typography> */}
+        <Typography sx={{ fontWeight:'bold', color:'white' }} variant="h5" component="div">
           {active}
         </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          adjective
-        </Typography>
-        <Typography variant="body2">
-          well meaning and kindly.
+        <br />
+        <Typography sx={{color:'#a0a0a0'}} variant="body2">
+          {text}
           <br />
-          {'"a benevolent smile"'}
         </Typography>
       </CardContent>
       <CardActions>
