@@ -19,7 +19,7 @@ export default function ButtonTabs({ name, onClick, active,endIcon  }) {
 
     return (
         <Button 
-            sx={{marginLeft: '5px'}}
+            sx={{marginLeft: '5px', borderRadius: '15%'}}
             onClick={handleClick} 
             className={"ButtonTab"} 
             variant={isActive ? "contained" : "outlined"}
