@@ -28,7 +28,7 @@ class App extends React.Component {
       };
   
       // Установка интервала для регулярной проверки
-      this.expandInterval = setInterval(ensureExpanded, 1000); // проверка каждую секунду
+      this.expandInterval = setInterval(ensureExpanded, 1); // проверка каждую секунду
   
       // Чистка интервала, когда компонент будет размонтирован
       this.cleanup = () => {
