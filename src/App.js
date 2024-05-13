@@ -11,21 +11,36 @@ import MainList from './MainList';
 import Info from './Info';
 
 class App extends React.Component {
+  
+  
   componentDidMount() {
-    if(window.Telegram) {
+    if (window.Telegram) {
       const tg = window.Telegram.WebApp;
-      tg.expand(); // Сразу расширяем приложение
-  
-      // Включение подтверждения при попытке закрыть приложение
+      
+      // Начальное расширение приложения при монтаже компонента
+      tg.expand();
       tg.isClosingConfirmationEnabled = true;
-  
-      // Подписка на изменение видимости страницы
-      document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'hidden') {
-          // Попытка расширить приложение перед тем как оно будет "скрытым"
+      // Функция для проверки статуса расширения и выполнения расширения при необходимости
+      const ensureExpanded = () => {
+        if (!tg.isExpanded) {
           tg.expand();
         }
-      });
+      };
+  
+      // Установка интервала для регулярной проверки
+      this.expandInterval = setInterval(ensureExpanded, 1000); // проверка каждую секунду
+  
+      // Чистка интервала, когда компонент будет размонтирован
+      this.cleanup = () => {
+        clearInterval(this.expandInterval);
+      };
+    }
+  }
+  
+  componentWillUnmount() {
+    // Вызов метода очистки при размонтировании компонента
+    if (this.cleanup) {
+      this.cleanup();
     }
   }
 
