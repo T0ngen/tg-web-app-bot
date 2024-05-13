@@ -50,15 +50,16 @@ const SimpleCarousel = () => {
             </style>
 
             <Slider {...settings}>
+            <div>
+                    <img src={logo3} height={212} alt='slide-3' className='slider-image' />
+                </div>
                 <div>
                     <img src={logo2} height={212}   alt='slide-1' className='slider-image' />
                 </div>
-                <div>
+                {/* <div>
                     <img src={logo} height={212} alt='slide-2' className='slider-image' />
-                </div>
-                <div>
-                    <img src={logo3} height={212} alt='slide-3' className='slider-image' />
-                </div>
+                </div> */}
+               
             </Slider>
         </>
     );
