@@ -29,6 +29,16 @@ export default function ButtonAppBar() {
       if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
+
+
+    }
+    if (item === 'Актуальное') {
+      const element = document.getElementById("blog");
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      }
+
+      
     }
 
   };
@@ -40,12 +50,10 @@ export default function ButtonAppBar() {
         <MenuIcon />
       </IconButton>
       <List sx={{ mt: 10}}>
-      {/* <ListItem button onClick={toggleDrawer(false)}>
+      
+      <ListItem button onClick={toggleDrawer(false, "Актуальное")}>
         <ListItemText className='navFooter' sx={{color: 'white', marginTop: 4, marginLeft: 4}} primary="Актуальное" />
       </ListItem>
-      <ListItem button onClick={toggleDrawer(false)}>
-        <ListItemText className='navFooter' sx={{color: 'white', marginTop: 4, marginLeft: 4}} primary="Статьи" />
-      </ListItem> */}
       
 
       <ListItem button  onClick={toggleDrawer(false, "Чем я могу быть полезным?")} >
@@ -53,8 +61,8 @@ export default function ButtonAppBar() {
           <ListItemText className='navFooter' sx={{color: 'white', marginTop: 4, marginLeft: 4}} primary="Чем я могу быть полезным?" />
         </Link>
       </ListItem>
-      <ListItem button onClick={toggleDrawer(false)}>
-        <ListItemText className='navFooter' sx={{color: 'white', marginTop: 4, marginLeft: 4}} primary="Мои проекты" />
+      <ListItem button onClick={toggleDrawer(false, "Хочешь себе такой же блог?")}>
+        <ListItemText className='navFooter' sx={{color: 'white', marginTop: 4, marginLeft: 4}} primary="Хочешь себе такой же блог?" />
       </ListItem>
     </List>
     </Box>

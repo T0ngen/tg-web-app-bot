@@ -26,9 +26,11 @@ class MainList extends React.Component {
         <div className='App'>
           
           
-
+          <div id='blog'>
           <ButtonAppBar />
+          </div>
           <ImageAvatars />
+          
           <Typography variant="h6" component="div" className='helloText' sx={{ padding: 2, fontSize: 20, paddingTop: 3, width: '100%', fontFamily: 'Montserrat, sans-serif' }}>{text}</Typography>
           <Typography variant="h6" component="div" className='helloText' sx={{ padding: 2, fontSize: 20, paddingTop: 1, width: '100%', fontFamily: 'Montserrat, sans-serif' }}>{text2}</Typography>
           <SimpleCarousel />

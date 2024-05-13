@@ -1,5 +1,5 @@
 // App.js
-import React from 'react';
+import React, {useEffect} from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import { BrowserRouter } from 'react-router-dom';
 // import ButtonAppBar from './components/NavigationFooter/NavFooter';
@@ -9,55 +9,35 @@ import RecentStoriesPage from './recents/RecentsStoriesPage';
 // import SimpleCarousel from './components/sidebar/sidebar';
 import MainList from './MainList';
 import Info from './Info';
-
-class App extends React.Component {
-  
-  
-  componentDidMount() {
+function App() {
+  useEffect(() => {
     if (window.Telegram) {
       const tg = window.Telegram.WebApp;
-      
-      // Начальное расширение приложения при монтаже компонента
+
       tg.expand();
       tg.isClosingConfirmationEnabled = true;
-      // Функция для проверки статуса расширения и выполнения расширения при необходимости
-      const ensureExpanded = () => {
+
+      const expandInterval = setInterval(() => {
         if (!tg.isExpanded) {
           tg.expand();
         }
-      };
-  
-      // Установка интервала для регулярной проверки
-      this.expandInterval = setInterval(ensureExpanded, 500); // проверка каждую секунду
-  
-      // Чистка интервала, когда компонент будет размонтирован
-      this.cleanup = () => {
-        clearInterval(this.expandInterval);
-      };
-    }
-  }
-  
-  componentWillUnmount() {
-    // Вызов метода очистки при размонтировании компонента
-    if (this.cleanup) {
-      this.cleanup();
-    }
-  }
+      }, 500);
 
-  render() {
-    return (
-      <Router>
-        <div className='App'>
-          <Routes>
-            <Route path="/" element={<MainList />} />
-            <Route path="/stories" element={<RecentStoriesPage />} />
-            <Route path="/details/:info"  element={<Info />} />
-          </Routes>
-        </div>
-      </Router>
-    );
-  }
+      return () => clearInterval(expandInterval);
+    }
+  }, []);
+
+  return (
+    <Router>
+      <div className='App'>
+        <Routes>
+          <Route path="/" element={<MainList />} />
+          <Route path="/stories" element={<RecentStoriesPage />} />
+          <Route path="/details/:info" element={<Info />} />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
 export default App;
-
