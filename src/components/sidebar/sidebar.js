@@ -10,8 +10,8 @@ import logo3 from '../ImageLogo/matherials.jpg';
 const SimpleCarousel = () => {
     const settings = {
         dots: true,
-        infinite: true,
-        speed: 800,
+        
+        speed: 200,
         slidesToShow: 1,
         slidesToScroll: 1
     };
