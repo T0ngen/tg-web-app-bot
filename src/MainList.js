@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Tabs from './Tabs/Tabs';
 import ImageAvatars from './components/Histories/Histories';
 import SimpleCarousel from './components/sidebar/sidebar';
-
+import Footer from './Footer/Footer';
 
 
 
@@ -38,6 +38,7 @@ class MainList extends React.Component {
           <Typography variant="h6" component="div" className='whatHelp' sx={{ fontWeight: 'bold', fontFamily: 'Montserrat, sans-serif', margin: 2 }}>Чем я могу быть полезным?</Typography>
           </div>
           <Tabs />
+          <Footer />
           
    
 
