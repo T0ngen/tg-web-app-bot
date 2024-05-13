@@ -21,7 +21,7 @@ function App() {
         if (!tg.isExpanded) {
           tg.expand();
         }
-      }, 500);
+      }, 1000);
 
       return () => clearInterval(expandInterval);
     }
