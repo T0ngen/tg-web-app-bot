@@ -14,8 +14,17 @@ class App extends React.Component {
   componentDidMount() {
     if(window.Telegram) {
       const tg = window.Telegram.WebApp;
+  
       tg.expand();
-      tg.isClosingConfirmationEnabled = true;
+  
+      window.addEventListener('beforeunload', (event) => {
+        // Попытка расширить приложение на всякий случай
+        tg.expand();
+      });
+  
+      tg.MainButton.onClick = () => {
+        tg.close();
+      };
     }
   }
 
