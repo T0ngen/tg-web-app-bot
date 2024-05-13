@@ -8,7 +8,7 @@ import RecentStoriesPage from './recents/RecentsStoriesPage';
 // import ImageAvatars from './components/Histories/Histories';
 // import SimpleCarousel from './components/sidebar/sidebar';
 import MainList from './MainList';
-
+import Info from './Info';
 
 class App extends React.Component {
   componentDidMount() {
@@ -26,7 +26,7 @@ class App extends React.Component {
           <Routes>
             <Route path="/" element={<MainList />} />
             <Route path="/stories" element={<RecentStoriesPage />} />
-            <Route path="/nearby" element={<div></div>} />
+            <Route path="/details/:info"  element={<Info />} />
           </Routes>
         </div>
       </Router>

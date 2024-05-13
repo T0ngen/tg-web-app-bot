@@ -33,22 +33,23 @@ export default function ButtonAppBar() {
 
   };
 
+  
   const drawerContent = (
     <Box sx={{ width: 'auto', height: '100%' }} role="presentation" onKeyDown={toggleDrawer(false)}>
       <IconButton onClick={toggleDrawer(false)} sx={{ position: 'absolute', top: 15, left: 20, color: 'white' }}>
         <MenuIcon />
       </IconButton>
-      <List sx={{ mt: 6}}>
-      <ListItem button onClick={toggleDrawer(false)}>
+      <List sx={{ mt: 10}}>
+      {/* <ListItem button onClick={toggleDrawer(false)}>
         <ListItemText className='navFooter' sx={{color: 'white', marginTop: 4, marginLeft: 4}} primary="Актуальное" />
       </ListItem>
       <ListItem button onClick={toggleDrawer(false)}>
         <ListItemText className='navFooter' sx={{color: 'white', marginTop: 4, marginLeft: 4}} primary="Статьи" />
-      </ListItem>
+      </ListItem> */}
       
 
-      <ListItem button onClick={toggleDrawer(false, "Чем я могу быть полезным?")}>
-        <Link to="#targetElement" style={{ textDecoration: 'none' }}>
+      <ListItem button  onClick={toggleDrawer(false, "Чем я могу быть полезным?")} >
+        <Link  to="#targetElement" style={{ textDecoration: 'none' }}>
           <ListItemText className='navFooter' sx={{color: 'white', marginTop: 4, marginLeft: 4}} primary="Чем я могу быть полезным?" />
         </Link>
       </ListItem>
@@ -61,7 +62,7 @@ export default function ButtonAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ bgcolor: '#2A2B30' }}>
+      <AppBar position="fixed" sx={{ bgcolor: '#2A2B30'}}>
         <Toolbar>
           <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }} onClick={toggleDrawer(true)}>
             <MenuIcon />

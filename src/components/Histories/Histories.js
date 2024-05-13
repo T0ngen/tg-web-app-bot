@@ -17,7 +17,7 @@ export default function ImageAvatars() {
 
 
     return (
-        <Stack sx={{ margin: 2, marginTop: 4 }} direction="row" spacing={3}>
+        <Stack sx={{ margin: 2, marginTop: 12 }} direction="row" spacing={3}>
             <Stack direction="column" alignItems="center" spacing={1}>
                 <Avatar onClick={handleClick} alt="Remy Sharp"  src={logo2} sx={{ width: 70, height: 70 }} />
                 <Typography   variant="caption" sx = {{fontSize:15, color:'white'}}>Нажми</Typography>

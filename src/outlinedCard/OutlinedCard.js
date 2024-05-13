@@ -5,7 +5,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-
+import { useNavigate } from 'react-router-dom';
 // const bull = (
 //   <Box
 //     component="span"
@@ -16,7 +16,14 @@ import Typography from '@mui/material/Typography';
 // );
 
 
-export default function OutlinedCard({active, text}) {
+export default function OutlinedCard({active, text, info}) {
+
+  const navigate = useNavigate();
+  function handleLearnMore() {
+    // Переход на страницу с деталями, передача параметра `info`
+    navigate(`/details/${encodeURIComponent(info)}`);
+  }
+
 
 
 const card = (
@@ -35,7 +42,7 @@ const card = (
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Узнать больше</Button>
+        <Button onClick={handleLearnMore} size="small">Узнать больше</Button>
       </CardActions>
     </React.Fragment>
   );

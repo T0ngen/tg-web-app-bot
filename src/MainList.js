@@ -32,10 +32,11 @@ class MainList extends React.Component {
           <Typography variant="h6" component="div" className='helloText' sx={{ padding: 2, fontSize: 20, paddingTop: 3, width: '100%', fontFamily: 'Montserrat, sans-serif' }}>{text}</Typography>
           <Typography variant="h6" component="div" className='helloText' sx={{ padding: 2, fontSize: 20, paddingTop: 1, width: '100%', fontFamily: 'Montserrat, sans-serif' }}>{text2}</Typography>
           <SimpleCarousel />
-          <Typography variant="h6" component="div" className='whatHelp' sx={{ fontWeight: 'bold', fontFamily: 'Montserrat, sans-serif', margin: 2 }}>Чем я могу быть полезным?</Typography>
           <div id="targetElement">
-          <Tabs/>
+          <Typography variant="h6" component="div" className='whatHelp' sx={{ fontWeight: 'bold', fontFamily: 'Montserrat, sans-serif', margin: 2 }}>Чем я могу быть полезным?</Typography>
           </div>
+          <Tabs id="targetElement"/>
+          
    
 
         </div>
