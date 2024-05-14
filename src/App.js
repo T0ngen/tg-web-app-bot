@@ -32,7 +32,7 @@ function App() {
       <div className='App'>
         <Routes>
           <Route path="/" element={<MainList />} />
-          <Route path="/stories" element={<RecentStoriesPage />} />
+          <Route path="/stories/:id" element={<RecentStoriesPage />} />
           <Route path="/details/:info" element={<Info />} />
         </Routes>
       </div>

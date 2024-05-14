@@ -9,27 +9,56 @@ import { useNavigate } from 'react-router-dom';
 
 export default function ImageAvatars() {
     
+
+
+    const avatars = [
+        {
+          id : 1,
+          alt: 'Remy Sharp',
+          src: logo2,
+          caption: 'Нажми'
+        },
+        {
+          id : 2,   
+          alt: 'Travis Howard',
+          src: logo,
+          caption: 'Кейсы'
+        },
+        {
+          id : 3,
+          alt: 'Travis Howard',
+          src: logo3,
+          caption: 'Отзывы'
+        },
+      ];
+      
+    
+
+
     const navigate = useNavigate();
 
-    const handleClick = () => {
-        navigate('/stories');
+    const handleClick = (id) => {
+        console.log(id);
+        navigate(`/stories/${id}`);
     };
 
 
     return (
         <Stack sx={{ margin: 2, marginTop: 12 }} direction="row" spacing={3}>
-            <Stack direction="column" alignItems="center" spacing={1}>
-                <Avatar onClick={handleClick} alt="Remy Sharp"  src={logo2} sx={{ width: 70, height: 70 }} />
-                <Typography   variant="caption" sx = {{fontSize:15, color:'white'}}>Нажми</Typography>
-            </Stack>
-            <Stack direction="column" alignItems="center" spacing={1}>
-                <Avatar  alt="Travis Howard" src={logo} sx={{ width: 70, height: 70 }} />
-                <Typography variant="caption" sx = {{fontSize:15, color:'white'}}>Кейсы</Typography>
-            </Stack>
-            <Stack direction="column" alignItems="center" spacing={1}>
-                <Avatar alt="Travis Howard" src={logo3} sx={{ width: 70, height: 70 }} />
-                <Typography variant="caption" sx = {{fontSize:15, color:'white'}}>Отзывы</Typography>
-            </Stack>
+      {avatars.map((avatar, index) => (
+        <Stack key={index} direction="column" alignItems="center" spacing={1}>
+          <Avatar
+            onClick={() => handleClick(avatar.id)}
+            alt={avatar.alt}
+            src={avatar.src}
+            sx={{ width: 70, height: 70 }}
+          />
+          <Typography variant="caption" sx={{ fontSize: 15, color: 'white' }}>
+            {avatar.caption}
+          </Typography>
         </Stack>
+      ))}
+    </Stack>
+
     );
 }

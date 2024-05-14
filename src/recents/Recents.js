@@ -7,73 +7,103 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 
 
-export default function Recents() {
-const navigate = useNavigate();
-const [isClosing, setClosing] = useState(false);
- const handleStoriesEnd = () => {
-	setClosing(true);
-	setTimeout(() => {
-	  navigate('/');
-	}, 500); // задержка для завершения анимации
+export default function Recents({id}) {
+	console.log('recents', id)
+	const navigate = useNavigate();
+	const [isClosing, setClosing] = useState(false);
+ 	const handleStoriesEnd = () => {
+		setClosing(true);
+		setTimeout(() => {
+			navigate('/');
+	}, 500); 
   };
-const stories = [
+	let storiesData = [];
+
+	if (id === "1"){
+		storiesData = [
+			{
+				src: "https://i.ibb.co/CMsnW4k/14-05-2024.jpg",
+			},
+			{
+				src: "https://i.ibb.co/hK6jdf2/1679347968-bogatyr-club-p-shesterenki-na-chernom-fone-instagram-5.jpg",
+			},
+			// добавьте сюда другие элементы
+		];
+	}
+	if (id === "2"){
+		storiesData = [
+			{
+				src: "https://i.ibb.co/CMsnW4k/14-05-2024.jpg",
+			},
+			{
+				src: "https://i.ibb.co/hK6jdf2/1679347968-bogatyr-club-p-shesterenki-na-chernom-fone-instagram-5.jpg",
+			},
+			// добавьте сюда другие элементы
+		];
+	}
+	if (id === "3"){
+		storiesData = [
+			{
+				src: "https://i.ibb.co/tcP7KV9/2024-05-14-18-32-46.jpg",
+			},
+			{
+				src: "https://i.ibb.co/HLyhCHJ/2024-05-14-18-32-56.jpg",
+			},
+			{
+				src: "https://i.ibb.co/JvdFL7z/2024-05-14-18-33-01.jpg",
+			},
+			{
+				src: "https://i.ibb.co/rpc1Wt9/2024-05-14-18-33-04.jpg",
+			},
+			// добавьте сюда другие элементы
+		];
+	}
+	if (id === "4"){
+		storiesData = [
+			{
+				src: "https://i.ibb.co/CMsnW4k/14-05-2024.jpg",
+			},
+			{
+				src: "https://i.ibb.co/hK6jdf2/1679347968-bogatyr-club-p-shesterenki-na-chernom-fone-instagram-5.jpg",
+			},
+			// добавьте сюда другие элементы
+		];
+	}
+	if (id === "5"){
+		storiesData = [
+			{
+				src: "https://i.ibb.co/CMsnW4k/14-05-2024.jpg",
+			},
+			{
+				src: "https://i.ibb.co/hK6jdf2/1679347968-bogatyr-club-p-shesterenki-na-chernom-fone-instagram-5.jpg",
+			},
+			// добавьте сюда другие элементы
+		];
+	}
 	
-	{	
-		
+
+	
+	
+
+
+	const stories = storiesData.map((story, index) => ({
 		content: ({ action, isPaused }) => {
 			return (
-				<div style={contentStyle}>
+				<div key={index} style={contentStyle}>
 					<ArrowBackIosNewIcon
-					style={arrow}
-					
-					onClick={() => {
-						console.log('clicked');
-						handleStoriesEnd();
-					}}
-				/>
-					
-
-				<img alt=""  style={image} 
-				src="https://i.ibb.co/CMsnW4k/14-05-2024.jpg">
-				</img>
-					
-					
+						style={arrow}
+						onClick={() => {
+							console.log('clicked');
+							handleStoriesEnd();
+						}}
+					/>
+					<img alt="" style={image} src={story.src} />
 				</div>
-				
-			)
+			);
 		}
-		
-	},
-	{	
-		
-		content: ({ action, isPaused }) => {
-			return (
-				<div style={contentStyle}>
-				<ArrowBackIosNewIcon
-					style={arrow}
-					
-					onClick={() => {
-						console.log('clicked');
-						handleStoriesEnd();
-					}}
-				/>
-
-				<img alt="" style={image} 
-				src="https://i.ibb.co/hK6jdf2/1679347968-bogatyr-club-p-shesterenki-na-chernom-fone-instagram-5.jpg">
-				</img>
-					
-					
-				</div>
-				
-			)
-		}
-		
-	},
+	}));
 	
 	
-	
-	];
-	   
 
   return (
 	<div className={isClosing ? 'closing-animation' : ''}>
