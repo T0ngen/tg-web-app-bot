@@ -27,7 +27,7 @@ export default function ButtonAppBar() {
     if (item === 'Чем я могу быть полезным?') {
       const element = document.getElementById("targetElement");
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        element.scrollIntoView({ behavior: 'smooth', block: 'end' });
       }
 
 
@@ -36,6 +36,14 @@ export default function ButtonAppBar() {
       const element = document.getElementById("blog");
       if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      }
+
+      
+    }
+    if (item === 'Хочешь себе такой же блог?') {
+      const element = document.getElementById("wants");
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
 
       
@@ -79,7 +87,7 @@ export default function ButtonAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontSize: 20, fontWeight: 'bold', paddingRight:'25px' , fontFamily: 'Montserrat, sans-serif' }}>
             Legacy.dev
           </Typography>
-          <Button href='https://t.me/scdb22'  color="inherit" sx={{backgroundColor: '#1776D4', borderRadius:15, fontSize: 10, fontWeight: 'bold', fontFamily: 'Montserrat, sans-serif'}}>Связаться</Button>
+          <Button href='https://t.me/scdb22'  color="inherit" sx={{backgroundColor: '#0905EB', borderRadius:15, fontSize: 10, fontWeight: 'bold', fontFamily: 'Montserrat, sans-serif'}}>Связаться</Button>
         </Toolbar>
       </AppBar>
       <StyledDrawer anchor='left' open={isDrawerOpen} onClose={toggleDrawer(false)} ModalProps={{ keepMounted: true }} bgColor={drawerBgColor}>

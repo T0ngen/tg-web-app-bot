@@ -3,7 +3,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-// import logo from '../ImageLogo/refsystem.jpg';
+import logo from '../ImageLogo/refsystem.jpg';
 import logo2 from '../ImageLogo/statya.jpg';
 import logo3 from '../ImageLogo/matherials.jpg';
 
@@ -56,9 +56,9 @@ const SimpleCarousel = () => {
                 <div>
                     <img src={logo2} height={165}   alt='slide-1' className='slider-image' />
                 </div>
-                {/* <div>
-                    <img src={logo} height={212} alt='slide-2' className='slider-image' />
-                </div> */}
+                <div>
+                    <img src={logo} height={165} alt='slide-2' className='slider-image' />
+                </div>
                
             </Slider>
         </>

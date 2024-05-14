@@ -38,8 +38,9 @@ class MainList extends React.Component {
           <Typography variant="h6" component="div" className='whatHelp' sx={{ fontWeight: 'bold', fontFamily: 'Montserrat, sans-serif', margin: 2 }}>Чем я могу быть полезным?</Typography>
           </div>
           <Tabs />
+          <div id='wants'>
           <Footer />
-          
+          </div>
    
 
         </div>

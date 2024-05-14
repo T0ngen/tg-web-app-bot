@@ -13,14 +13,14 @@ export default function Footer() {
             flexDirection: 'column', 
             alignItems: 'center', 
             justifyContent: 'center', 
-            paddingBottom: '10px',
+            paddingBottom: '20px',
         }}>
             
             <Button
                 href='https://t.me/scdb22'
                 color="inherit"
                 sx={{
-                    backgroundColor: '#1776D4', 
+                    backgroundColor: '#0905EB', 
                     color: 'white',
                     borderRadius: 15,
                     fontSize: '20px', // Очень большой размер текста
@@ -37,7 +37,9 @@ export default function Footer() {
             >
                 Legacy.dev
             </Button>
-            {/* &copy; {new Date().getFullYear()} - All rights reserved */}
+            <div style={{paddingTop:'15px'}}>
+            &copy; {new Date().getFullYear()} - All rights reserved
+            </div>
         </footer>
         </>
     );

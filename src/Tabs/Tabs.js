@@ -45,7 +45,7 @@ export default function Tabs() {
             
                 <ButtonTabs endIcon={<AddToHomeScreenIcon />} onClick={() => handleClick(firstButton)} name={'Услуги'} active={active === firstButton} />
                 <ButtonTabs endIcon={<AutoAwesomeMosaicIcon />} onClick={() => handleClick(secondButton)} name={'Проекты'} active={active === secondButton} />
-                <ButtonTabs endIcon={<QuizIcon />} onClick={() => handleClick(thirdButton)} name={'--FAQ--'} active={active === thirdButton} />
+                <ButtonTabs endIcon={<QuizIcon />} onClick={() => handleClick(thirdButton)} name={'-FAQ-'} active={active === thirdButton} />
             </div>
             <OutlinedCard active={active} text={services} info={info}/>
            
