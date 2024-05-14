@@ -16,7 +16,7 @@ import Footer from './Footer/Footer';
 
 const text = `Привет!👋🏼 Не пугайся, ты не на сайте и не в другой соцсeти.
 Так выглядит мой блог в Телеграмм`
-const text2 = `Жми ниже, я расскажу и покаэу, как здесь все устроено⬇️`
+const text2 = `Жми ниже, я расскажу и покажу, как здесь все устроено⬇️`
 class MainList extends React.Component {
 
   render() {
@@ -35,7 +35,7 @@ class MainList extends React.Component {
           <Typography variant="h6" component="div" className='helloText' sx={{ padding: 2, fontSize: 20, paddingTop: 1, width: '100%', fontFamily: 'Montserrat, sans-serif' }}>{text2}</Typography>
           <SimpleCarousel />
           <div id="targetElement">
-          <Typography variant="h6" component="div" className='whatHelp' sx={{ fontWeight: 'bold', fontFamily: 'Montserrat, sans-serif', margin: 2 }}>Чем я могу быть полезным?</Typography>
+          <Typography variant="h6" component="div" className='whatHelp' sx={{ fontWeight: 'bold', fontFamily: 'Montserrat, sans-serif', margin: 2 }}>Чем я могу быть полезен?</Typography>
           </div>
           <Tabs />
           <div id='wants'>

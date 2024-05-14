@@ -31,15 +31,10 @@ const stories = [
 						handleStoriesEnd();
 					}}
 				/>
-					{/* <ArrowBackIosNewIcon
-					style={arrow}
-					onClick={() => {
-						handleStoriesEnd();
-					}}
-				/> */}
+					
 
 				<img alt=""  style={image} 
-				src="https://i.ibb.co/3crZkK3/2.jpg">
+				src="https://i.ibb.co/CMsnW4k/14-05-2024.jpg">
 				</img>
 					
 					
@@ -64,7 +59,7 @@ const stories = [
 				/>
 
 				<img alt="" style={image} 
-				src="https://i.ibb.co/kcfLkH5/1.jpg">
+				src="https://i.ibb.co/hK6jdf2/1679347968-bogatyr-club-p-shesterenki-na-chernom-fone-instagram-5.jpg">
 				</img>
 					
 					
@@ -79,11 +74,6 @@ const stories = [
 	
 	];
 	   
-
-
-
- 
-
 
   return (
 	<div className={isClosing ? 'closing-animation' : ''}>
@@ -120,32 +110,25 @@ const stories = [
 		
 	}
 
-  const image = {
-	display: "block",
-	maxWidth: "100%",
-	borderRadius: 4,
-  };
+	const image = {
+		display: 'block',
+		maxWidth: '100%',
+		height: 'auto',
+		margin: '0 auto'
+	  };
+	  
   
-//   const code = {
-// 	background: "#eee",
-// 	padding: "5px 10px",
-// 	borderRadius: "4px",
-// 	color: "#333",
-//   };
+
   
   const contentStyle = {
 	position: 'relative',
-	background: "#333",
-	width: "100%",
-	
-	color: "white",
-	height: 'var(--tg-viewport-height)',
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'center',
+	background: '#333',
+	width: '100%',
+	color: 'white',
+	height: 'var(--tg-viewport-height)'
   };
   
-//   const customSeeMore = {
-// 	textAlign: "center",
-// 	fontSize: 14,
-// 	bottom: 20,
-// 	position: "relative",
-//   };
   

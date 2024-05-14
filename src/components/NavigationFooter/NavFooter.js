@@ -24,7 +24,7 @@ export default function ButtonAppBar() {
       return;
     }
     setDrawerOpen(open);
-    if (item === 'Чем я могу быть полезным?') {
+    if (item === 'Чем я могу быть полезен?') {
       const element = document.getElementById("targetElement");
       if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'end' });
@@ -64,9 +64,9 @@ export default function ButtonAppBar() {
       </ListItem>
       
 
-      <ListItem button  onClick={toggleDrawer(false, "Чем я могу быть полезным?")} >
+      <ListItem button  onClick={toggleDrawer(false, "Чем я могу быть полезен?")} >
         <Link  to="#targetElement" style={{ textDecoration: 'none' }}>
-          <ListItemText className='navFooter' sx={{color: 'white', marginTop: 4, marginLeft: 4}} primary="Чем я могу быть полезным?" />
+          <ListItemText className='navFooter' sx={{color: 'white', marginTop: 4, marginLeft: 4}} primary="Чем я могу быть полезен?" />
         </Link>
       </ListItem>
       <ListItem button onClick={toggleDrawer(false, "Хочешь себе такой же блог?")}>
